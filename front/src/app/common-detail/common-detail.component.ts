@@ -20,7 +20,6 @@ export class CommonDetailComponent implements OnInit {
   ngOnInit() {
     this.tableName = this.route.snapshot.paramMap.get('table');
     this.id = +this.route.snapshot.paramMap.get('id');
-    this.updateDetail();
 
     this.route.paramMap.subscribe((params) => {
       this.tableName = params.get('table');
@@ -30,6 +29,8 @@ export class CommonDetailComponent implements OnInit {
   }
 
   updateDetail() {
-    this.detail = this.commonService.getDetail(this.tableName, this.id);
+    this.commonService.getDetail(this.tableName, this.id).subscribe((detail) => {
+      this.detail = detail;
+    });
   }
 }

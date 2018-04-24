@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 
 import { CommonService } from './common.service';
@@ -27,6 +28,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     CommonService,

@@ -15,6 +15,8 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    this.roots = this.commonService.getRoots();
+    this.commonService.getRoots().subscribe((roots) => {
+      this.roots = roots;
+    });
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { CommonService } from '../common.service';
+import { ITable } from 'cms-lib';
 
 @Component({
   selector: 'app-common-list',
@@ -10,7 +11,7 @@ import { CommonService } from '../common.service';
 })
 export class CommonListComponent implements OnInit {
   tableName: string;
-  data;
+  data: ITable;
   dataSource: MatTableDataSource<any>;
   columns: string[];
 
@@ -22,7 +23,6 @@ export class CommonListComponent implements OnInit {
 
   ngOnInit() {
     this.tableName = this.route.snapshot.paramMap.get('table');
-    this.updateList();
 
     this.route.paramMap.subscribe((params) => {
       this.tableName = params.get('table');
@@ -31,9 +31,11 @@ export class CommonListComponent implements OnInit {
   }
 
   updateList() {
-    this.data = this.commonService.getList(this.tableName);
-    this.dataSource = new MatTableDataSource(this.data.rows);
-    this.columns = this.data.cols.map(s => s.name);
+    this.commonService.getList(this.tableName).subscribe((data) => {
+      this.data = data;
+      this.dataSource = new MatTableDataSource(this.data.rows);
+      this.columns = this.data.cols.map(s => s.name);
+    });
   }
 
   handleRowClick(row) {

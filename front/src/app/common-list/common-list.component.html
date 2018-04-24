@@ -1,3 +1,4 @@
+<ng-container *ngIf="data">
 <h1 class="mat-headline">{{data.display}}</h1>
 
 <mat-table [dataSource]="dataSource">
@@ -15,3 +16,4 @@
   >
   </mat-row>
 </mat-table>
+</ng-container>

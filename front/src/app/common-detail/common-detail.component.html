@@ -1,3 +1,5 @@
+<ng-container *ngIf="detail">
 <h1 class="mat-headline">{{detail.display}} {{id}}: {{detail.row[detail.title]}}</h1>
 
 <app-fields [cols]="detail.cols" [row]="detail.row"></app-fields>
+</ng-container>
