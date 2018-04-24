@@ -1,0 +1,18 @@
+<ng-container *ngFor="let col of cols">
+  <ng-container *ngIf="col.type === 'integer' || col.type === 'string' || col.type === 'link'">
+    <div class="field">
+      <div class="label">{{col.display}}</div>
+      <div class="value">
+        <app-field [col]="col" [value]="row[col.name]"></app-field>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="col.type === 'children' && row[col.name].rows.length > 0">
+    <div style="margin-left:30px">
+      <h2 class="mat-title">{{col.display}}</h2>
+      <div style="margin-bottom:5px" *ngFor="let childRow of row[col.name].rows">
+        <app-fields [cols]="row[col.name].cols" [row]="childRow"></app-fields>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

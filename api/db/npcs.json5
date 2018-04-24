@@ -1,0 +1,41 @@
+{
+  display: 'Npcs',
+  title: 'name',
+  cols: [
+    {
+      type: 'id',
+      name: 'id',
+      display: 'Id',
+    },
+    {
+      type: 'string',
+      name: 'name',
+      display: 'Name',
+    },
+    {
+      type: 'integer',
+      name: 'level',
+      display: 'Level',
+    },
+    {
+      type: 'link',
+      name: 'categoryId',
+      table: 'npcCategories',
+      display: 'Category',
+    },
+    {
+      type: 'children',
+      name: 'dropItems',
+      table: 'npcDropItems',
+      display: 'Drop items',
+    },
+  ],
+  rows: [
+    { id: 1, name: 'Baroness Anastari', level: 51, categoryId: 1 },
+    { id: 2, name: 'Nerub\'enkan', level: 51, categoryId: 1 },
+    { id: 3, name: 'Maleki the Pallid', level: 62, categoryId: 2 },
+    { id: 4, name: 'Magistrate Barthilas', level: 51, categoryId: 1 },
+    { id: 5, name: 'Ramstein the Gorger', level: 51, categoryId: 1 },
+    { id: 6, name: 'Lord Aurius Rivendare', level: 51, categoryId: 1 },
+  ],
+}

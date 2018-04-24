@@ -1,0 +1,25 @@
+{
+  display: 'Npc categories',
+  title: 'name',
+  cols: [
+    {
+      type: 'id',
+      name: 'id',
+      display: 'Id',
+    },
+    {
+      type: 'string',
+      name: 'name',
+      display: 'Name',
+    },
+    {
+      type: 'string',
+      name: 'description',
+      display: 'Description',
+    },
+  ],
+  rows: [
+    { id: 1, name: 'Undead', description: 'The undead are beings that have died and have had their souls trapped between life and death.' },
+    { id: 2, name: 'Humanoids', description: 'A humanoid usually has two arms, two legs, and one head, or a human-like torso, and a head. ' },
+  ],
+}

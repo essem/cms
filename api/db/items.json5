@@ -1,0 +1,30 @@
+{
+  display: 'Items',
+  title: 'name',
+  cols: [
+    {
+      type: 'id',
+      name: 'id',
+      display: 'Id',
+    },
+    {
+      type: 'string',
+      name: 'name',
+      display: 'Name',
+    },
+    {
+      type: 'type',
+      name: 'type',
+      display: 'Type',
+    },
+  ],
+  rows: [
+    { id: 1, name: 'Shadowy Laced Handwraps', type: 'Cloth Armor' },	
+    { id: 2, name: 'Screeching Bow', type: 'Bow' },
+    { id: 3, name: 'Anastari Heirloom', type: 'Amulet' },
+    { id: 4, name: 'Banshee Finger', type: 'Wand' },
+    { id: 5, name: 'Chillhide Bracers', type: 'Leather Armor' },
+    { id: 6, name: 'Windshrieker Pauldrons', type: 'Mail Armor' },
+    { id: 7, name: 'Banshee\'s Touch', type: 'Plate Armor' },      
+  ],
+}

@@ -1,0 +1,17 @@
+<h1 class="mat-headline">{{data.display}}</h1>
+
+<mat-table [dataSource]="dataSource">
+  <ng-container [matColumnDef]="col.name" *ngFor="let col of data.cols">
+    <mat-header-cell *matHeaderCellDef>{{col.display}}</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <app-field [col]="col" [value]="row[col.name]"></app-field>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row
+    *matRowDef="let row; columns: columns"
+    (click)="handleRowClick(row)"
+  >
+  </mat-row>
+</mat-table>

@@ -1,0 +1,11 @@
+<ng-container [ngSwitch]="col.type">
+  <a
+    *ngSwitchCase="'link'"
+    routerLink="/common/{{col.table}}/{{value.id}}"
+  >
+    {{value.id}}: {{value.display}}
+  </a>
+  <span *ngSwitchDefault>
+    {{value}}
+  </span>
+</ng-container>
