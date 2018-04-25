@@ -38,4 +38,11 @@ cd front
 yarn start
 ```
 
+Or launch them with concurrently.
+```bash
+./watch.sh
+```
+
+ Watching can be done by CTRL+SHIFT+B in Visual Studio Code.
+
 Open your browser and connect to http://localhost:4200.
